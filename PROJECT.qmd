@@ -1,6 +1,11 @@
 ---
+<<<<<<< HEAD
 title: "Movies Project"
 author: "Vadym Zeinalov, Mateo Acosta Loza, Nina Rissi"
+=======
+title: "Movie Project"
+author: "Vadym Zeinalov, Nina Rissi, Mateo Acosta Loza"
+>>>>>>> 63e349e (sdjkfhjs)
 format:
    html:
     toc: true
