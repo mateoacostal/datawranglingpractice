@@ -42,7 +42,7 @@ df <- read.delim("C:/Users/User/OneDrive - Avans Hogeschool/Desktop/Notre Dame/G
 Find what genres have the highest average positive user experiences
 
 ```{r}
-
+#comment
 df$Metascore <- as.numeric(df$Metascore)
 df <- df[!is.na(df$Metascore), ]
 
