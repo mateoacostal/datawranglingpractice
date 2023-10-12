@@ -55,7 +55,6 @@ df %>%
   arrange(desc(avg_Metascore)) %>% 
   slice_head(n = 5)
 
-
 ```
 
 
