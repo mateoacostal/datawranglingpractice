@@ -19,6 +19,6 @@ Find movies in dataset with top 10 revenues
 Find what year movies made the most money (as revenue)
 
 ```{r}
-df <- read.delim("~/Desktop/Classes/Notre Dame/Grow Irish Week/movie_budget_rating.csv", fileEncoding="UTF-16LE", sep="\t", header=TRUE)
+df <- read.delim("~/Downloads/datawranglingpractice/movie_budget_rating.csv", fileEncoding="UTF-16LE", sep="\t", header=TRUE)
 ```
 
