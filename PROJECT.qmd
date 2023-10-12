@@ -10,10 +10,10 @@ format:
     self-contained: true
 ---
 
-### Find what genre has the highest average positive user experiences
-### Find what genre has the highest average negative user experiences
-### Find what genre makes the most money (As outcome - budget)
-### Find what genre usually hive the highest budgets
-### Find what genre has the highest average revenues 
-### Find movies in dataset with top 10 revenues
-### Find what year movies made the most money (as revenue)
+Find what genre has the highest average positive user experiences
+Find what genre has the highest average negative user experiences
+Find what genre makes the most money (As outcome - budget)
+Find what genre usually hive the highest budgets
+Find what genre has the highest average revenues 
+Find movies in dataset with top 10 revenues
+Find what year movies made the most money (as revenue)
