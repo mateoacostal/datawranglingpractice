@@ -17,3 +17,6 @@ Find what genre usually hive the highest budgets
 Find what genre has the highest average revenues 
 Find movies in dataset with top 10 revenues
 Find what year movies made the most money (as revenue)
+
+
+edwvce
