@@ -1,6 +1,6 @@
 ---
-title: "Car Project Data Prep"
-author: "Vadym Zeinalov"
+title: "Movies Project"
+author: "Vadym Zeinalov, Mateo Acosta Loza, Nina Rissi"
 format:
    html:
     toc: true
@@ -19,7 +19,6 @@ Find movies in dataset with top 10 revenues
 Find what year movies made the most money (as revenue)
 
 
-
 ## Loading Dataset
 
 The data should be on your computer. Just locate it, using your path and everything will work
@@ -32,7 +31,6 @@ options(scipen = 99)
 ```{r}
 df <- read.delim("C:/Users/User/OneDrive - Avans Hogeschool/Desktop/Notre Dame/Grow Irish I/datawranglingpractice/movie_budget_rating.csv", fileEncoding="UTF-16LE", sep="\t", header=TRUE)
 ```
-
 
 
 Find what genre has the highest average positive user experiences
@@ -55,8 +53,6 @@ df %>%
 
 
 
-
-
 Find what genre has the highest average negative user experiences
 ```{r}
 df %>% 
@@ -65,8 +61,6 @@ df %>%
   arrange(avg_Metascore) %>% 
   slice_head(n = 1)
 ```
-
-
 
 
 Find what genre makes the most money (As outcome - budget)
@@ -98,9 +92,6 @@ df %>%
 
 
 
-
-
-
 Find what genre has the highest average revenues 
 
 ```{r}
@@ -108,11 +99,8 @@ df %>%
   group_by(Genre) %>% 
   summarise(Revenue = mean(Revenue, na.rm = TRUE)) %>% 
   arrange(desc(Revenue)) %>% 
-  slice_head(n = 1)
+  slice_head(n = 5)
 ```
-
-
-
 
 
 
@@ -126,14 +114,19 @@ df %>%
 
 
 
-
-
-Find what year movies made the most money (as revenue)
+Find what years movies made the most money (as revenue)
 ```{r}
+library(lubridate)
 
-kg
+best_years <- aggregate(Revenue ~ Release.Date, data = df, mean)
 
+best_years$Release.Date <- year(mdy(best_years$Release.Date))
 
+max_revenue_year <- aggregate(Revenue ~ Release.Date, data = best_years, max)
+
+max_revenue_year %>% 
+  arrange(desc(Revenue)) %>% 
+  slice_head(n = 5)
 
 ```
 
