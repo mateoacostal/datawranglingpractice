@@ -19,7 +19,7 @@ Find movies in dataset with top 10 revenues
 Find what year movies made the most money (as revenue)
 
 
-## Loading Dataset
+**Loading Dataset**
 
 The data should be on your computer. Just locate it, using your path and everything will work
 
@@ -32,8 +32,10 @@ options(scipen = 99)
 df <- read.delim("C:/Users/User/OneDrive - Avans Hogeschool/Desktop/Notre Dame/Grow Irish I/datawranglingpractice/movie_budget_rating.csv", fileEncoding="UTF-16LE", sep="\t", header=TRUE)
 ```
 
+**Analysis**
 
-Find what genre has the highest average positive user experiences
+Find what genres have the highest average positive user experiences
+
 ```{r}
 
 df$Metascore <- as.numeric(df$Metascore)
@@ -46,24 +48,25 @@ df %>%
   group_by(Genre) %>% 
   summarise(avg_Metascore = mean(Metascore, na.rm = TRUE)) %>% 
   arrange(desc(avg_Metascore)) %>% 
-  slice_head(n = 1)
+  slice_head(n = 5)
 
 
 ```
 
 
 
-Find what genre has the highest average negative user experiences
+Find what genres have the highest average negative user experiences
+
 ```{r}
 df %>% 
   group_by(Genre) %>% 
   summarise(avg_Metascore = mean(Metascore, na.rm = TRUE)) %>% 
   arrange(avg_Metascore) %>% 
-  slice_head(n = 1)
+  slice_head(n = 5)
 ```
 
 
-Find what genre makes the most money (As outcome - budget)
+Find what genres make the most money (As outcome - budget)
 
 ```{r}
 df <- df %>% 
@@ -73,26 +76,24 @@ df %>%
   group_by(Genre) %>% 
   summarise(profit = mean(profit, na.rm = TRUE)) %>% 
   arrange(desc(profit)) %>% 
-  slice_head(n = 1)
+  slice_head(n = 5)
 ```
 
 
-Find what genre usually has the highest budgets
+Find what genres usually have the highest budgets
 
 ```{r}
 df %>% 
   group_by(Genre) %>% 
   summarise(Budget = mean(Budget, na.rm = TRUE)) %>% 
   arrange(desc(Budget)) %>% 
-  slice_head(n = 1)
-
-
+  slice_head(n = 5)
 
 ```
 
 
 
-Find what genre has the highest average revenues 
+Find what genres have the highest average revenues 
 
 ```{r}
 df %>% 
